@@ -12,7 +12,7 @@ def main():
     nasacreds = "api_key=" + nasacreds.strip("\n")        
 
     ## update the date below, if you like
-    startdate = "start_date=2019-11-11"
+    startdate = "start_date=2020-09-28"
 
     ## the value below is not being used in this
     ## version of the script
