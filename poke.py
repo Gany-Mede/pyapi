@@ -7,7 +7,7 @@ json2python={}
 def api_pull():
     global json2python
     begin_url = 'https://pokeapi.co/api/v2/pokemon/'
-    choice = input("What Pokepond would you like a picture of? ")
+    choice = input("What Pokemon would you like a picture of? ")
     end_api = begin_url + choice
     info = requests.get(end_api).json()
     json2python = info
