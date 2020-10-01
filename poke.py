@@ -3,7 +3,7 @@
 import requests
 
 json2python={}
-
+#PLAYER 1
 def api_pull():
     global json2python
     begin_url = 'https://pokeapi.co/api/v2/pokemon/'
@@ -12,7 +12,7 @@ def api_pull():
     info = requests.get(end_api).json()
     json2python = info
     return info
-
+#PLAYER 2
 def api_slice(json2python):
     poke_pic = json2python['sprites']['front_default']
     return poke_pic
