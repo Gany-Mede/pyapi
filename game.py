@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import requests
 import random
 from requests import get
 from requests.exceptions import RequestException
@@ -50,6 +50,10 @@ rooms = {
             'Stocks Room' : {
                 'north': 'Battle Room',
                 'east': 'Kitchen',
+                'south' : 'Quote Room'
+                },
+            'Quote Room' : {
+                'north': 'Stocks Room'
                 },
 
             'Kitchen' : {
@@ -190,6 +194,13 @@ def stocks():
         if userInput == 'q':
             break;
 
+#Quote of the Day API
+def quote():
+    print("Welcome!")
+    print("Here is your quote of the day! \n")
+    quote = requests.get('https://favqs.com/api/qotd').json()
+    print(quote['quote']['body'])
+    print(f"-{quote['quote']['author']}\n")
 
 #Riddle function
 def riddles():
@@ -312,6 +323,9 @@ while True:
   #Stocks
   if currentRoom == 'Stocks Room':
       stocks()
+  #Quote
+  if currentRoom == 'Quote Room':
+      quote()
   ##Dragon Room
   if currentRoom == 'Dragon Room':
       dragon()
